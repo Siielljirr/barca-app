@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model pemain_barca {
+  no_urut         Int    @id @default(autoincrement())
+  nama_pemain     String
+  posisi          String
+  nomor_punggung  Int
+  negara          String
+}
